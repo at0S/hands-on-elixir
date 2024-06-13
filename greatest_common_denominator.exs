@@ -19,9 +19,17 @@ ExUnit.start()
 defmodule GCDTest do
   use ExUnit.Case
 
-  test "greatest common denominator" do
+  test "simple cases" do
     assert GCD.gcd(36, 63) == 9
+    assert GCD.gcd(63, 36) == 9
+  end
+  
+  test "negative arguments" do
     assert GCD.gcd(-5, 25) == 5
+    assert GCD.gcd(5, -25) == 5
+  end
+
+  test "zero arguments" do
     assert GCD.gcd(0, 5) == 5
     assert GCD.gcd(5, 0) == 5
   end
